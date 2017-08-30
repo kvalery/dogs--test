@@ -1,0 +1,18 @@
+<div>
+  <h1>Choose the dog!</h1>
+</div>
+
+<div *ngIf="!dogService._dogs$ | async">
+  <div id="loading"></div>
+</div>
+<div *ngIf="dogService._dogs$ | async">
+  <div *ngFor="let img of dogs">
+    <img src="{{img}}" alt="">
+  </div>
+
+  <app-slider
+    Pictures = 'csdf'>
+  </app-slider>
+
+</div>
+

@@ -1,0 +1,23 @@
+.body-page{
+  padding-top: 10px;
+  min-width: 800px;
+  .navbar{
+    border-radius: 10px 10px 0 0;
+    background: rgba(138, 64, 39, 0.16);
+    margin-bottom: 0px;
+
+    .search-view{
+      input{
+        width: 257px;
+      }
+    }
+  }
+  .body{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    background: white;
+    border-radius:  0 0 10px 10px;
+  }
+}

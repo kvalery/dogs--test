@@ -1,0 +1,27 @@
+<div *ngIf="breedService._breeds$ | async">
+
+  <div class="list-group">
+
+    <div *ngFor="let breed of objectKeys(breedList)">
+
+      <a class="list-group-item breed"
+         [routerLink]="['/breed', breed ]"
+         routerLinkActive="active">{{breed}}</a>
+
+      <div *ngIf="breedList[breed].length">
+
+        <a *ngFor="let subBreed of breedList[breed]"
+           class="list-group-item breed-varieties"
+           routerLinkActive="active"
+           [routerLink]="['/breed', subBreed ]">{{ breed + ' ( ' + subBreed + ' )' }}</a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+

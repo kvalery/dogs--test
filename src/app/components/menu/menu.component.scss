@@ -1,0 +1,37 @@
+.list-group{
+  border: 1px solid rgba(45, 15, 21, 0.21);
+  border-radius: 10px;
+  .list-group-item{
+    background: none;
+    border: none;
+    border-radius: 0px;
+    opacity: 0.7;
+    color: rgba(56, 19, 13, 0.94);
+
+    &:hover{
+      background: rgba(45, 15, 21, 0.05);
+      opacity: 1;
+    }
+    &.active{
+      background: rgba(45, 15, 21, 0.05);
+      opacity: 1;
+      position: relative;
+      &:before {
+        position: absolute;
+        display: block;
+        content: "‣";
+        font-size: 30px;
+        right: 5px;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  .breed{
+
+  }
+  .breed-varieties{
+    padding-left: 30px;
+  }
+}
+

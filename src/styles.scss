@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+/* Animation */
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(122, 51, 36, 0.19);;
+  box-shadow: 0 1px 1px rgba(122, 51, 36, 0.19) inset, 0 0 8px rgba(122, 51, 36, 0.19);
+  outline: 0 none;
+}
+
+$broun : rgba(85, 30, 25, 0.38);
+
+@-webkit-keyframes loading {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes loading {
+  to { -moz-transform: rotate(360deg); }
+}
+@-ms-keyframes loading {
+  to { -ms-transform: rotate(360deg); }
+}
+@keyframes loading {
+  to { transform: rotate(360deg); }
+}
+
+/* Loader (*/
+#loading {
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-image: linear-gradient(bottom, #FFFFFF 50%, $broun 50%);
+  background-image: -o-linear-gradient(bottom, #FFFFFF 50%, $broun 50%);
+  background-image: -moz-linear-gradient(bottom, #FFFFFF 50%, $broun 50%);
+  background-image: -webkit-linear-gradient(bottom, #FFFFFF 50%, $broun 50%);
+  background-image: -ms-linear-gradient(bottom, #FFFFFF 50%, $broun 50%);
+
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.5, #FFFFFF),
+      color-stop(0.5, $broun )
+  );
+
+  -webkit-animation: loading 1s infinite linear;
+  -moz-animation: loading 1s infinite linear;
+  -ms-animation: loading 1s infinite linear;
+  animation: loading 1s infinite linear;
+
+}
+
+/* Just page styling */
+body{
+  background: rgba(178, 128, 82, 0.07);
+}
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+}
