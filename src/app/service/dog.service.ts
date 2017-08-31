@@ -10,29 +10,33 @@ export class DogService {
   private _dogs: BehaviorSubject<any> = new BehaviorSubject({});
   public _dogs$ = this._dogs.asObservable();
 
-  public set dogs(dogs: any ){
-    this._dogs.next(dogs);
+  public set dogs( dogs: string[] ){
+    this._dogs.next( dogs );
   };
 
   public get dogs() {
     return this._dogs.getValue();
   };
 
-  public getdogs = (breed: string, sub: string ) => {
+  public getdogs = ( breed: string, sub: string ) => {
 
-    let dogsColection = this.dogs;
+    let dogsCollection = this.dogs;
     let queryStr = breed + ( ( sub ) ? '/' + sub : '' );
     let breedKey = breed + ( ( sub ) ? '-' + sub : '' );
 
-
     this.http
       .get(`https://dog.ceo/api/breed/${queryStr}/images`)
-      .map(res => {
-        return res.json();
-      }).subscribe(data => {
+      .map( res => {
 
-        dogsColection[breedKey] = data.message;
-        this.dogs = dogsColection;
+        if ( res.text() === '{"status":"error","code":"404","message":"Breed not found"}' ) {
+          this.router.navigate(['/mistake']);
+        }
+
+        return res.json();
+      }).subscribe(( data: { status: string; message: string[]; } )  => {
+
+        dogsCollection[breedKey] = data.message;
+        this.dogs = dogsCollection;
 
       },
       error => {
@@ -45,6 +49,6 @@ export class DogService {
   constructor(
     private http: Http,
     private router: Router,
-  ){}
+  ) {}
 
 }

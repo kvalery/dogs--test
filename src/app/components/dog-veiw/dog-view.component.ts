@@ -14,11 +14,11 @@ export class DogViewComponent implements OnInit {
 
   public breedName: string;
   public subBreedName: string;
-  public dogsColection: any;
-  public dogFotos: any;
+  public dogsCollection: {};
+  public dogPhotos: string[];
 
   private cleanView = function(){
-    this.dogFotos = [];
+    this.dogPhotos = [];
     this.breedName = '';
     this.subBreedName = '';
   };
@@ -33,10 +33,10 @@ export class DogViewComponent implements OnInit {
 
     this.dogService._dogs$.subscribe(
       (data: any ) => {
-        this.dogsColection = data;
+        this.dogsCollection = data;
 
         if ( this._breedKey ) {
-          this.dogFotos = this.dogsColection[ this._breedKey ];
+          this.dogPhotos = this.dogsCollection[ this._breedKey ];
         }
 
       }
@@ -58,8 +58,8 @@ export class DogViewComponent implements OnInit {
 
       this._breedKey = this.breedName + ( (this.subBreedName) ? '-' + this.subBreedName : '');
 
-      if ( this.dogsColection[ this._breedKey ] ) {
-        this.dogFotos = this.dogsColection[ this._breedKey ];
+      if ( this.dogsCollection[ this._breedKey ] ) {
+        this.dogPhotos = this.dogsCollection[ this._breedKey ];
       }  else {
         this.dogService.getdogs( this.breedName, this.subBreedName );
 

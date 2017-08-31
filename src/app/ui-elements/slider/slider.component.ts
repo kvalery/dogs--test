@@ -1,16 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnChanges {
 
   public viewIndex = 0;
 
   @Input()
-  public pictures: [string];
+  public pictures: string[];
 
   public actionNext = function(action: boolean){
 
@@ -31,8 +31,10 @@ export class SliderComponent implements OnInit {
   constructor(
   ) { }
 
-  ngOnInit() {
-
+  ngOnChanges( changes: SimpleChanges ) {
+    if ( changes.pictures ) {
+      this.viewIndex = 0;
+    }
   }
 
 }

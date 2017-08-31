@@ -3,14 +3,14 @@
   <h1 *ngIf="subBreedName">{{ ( subBreedName | capitalize ) +' '+ breedName }}!</h1>
 </div>
 
-<div *ngIf="!dogFotos.length">
+<div *ngIf="!dogPhotos.length">
   <div class="loading"></div>
 </div>
 
-<div *ngIf="dogFotos.length">
+<div *ngIf="dogPhotos.length">
 
   <app-slider
-    [pictures] = 'dogFotos'>
+    [pictures] = 'dogPhotos'>
   </app-slider>
 
 </div>
