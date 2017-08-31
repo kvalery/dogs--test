@@ -1,0 +1,93 @@
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(122, 51, 36, 0.19);;
+  box-shadow: 0 1px 1px rgba(122, 51, 36, 0.19) inset, 0 0 8px rgba(122, 51, 36, 0.19);
+  outline: 0 none;
+}
+@-webkit-keyframes loading {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes loading {
+  to { -moz-transform: rotate(360deg); }
+}
+@-ms-keyframes loading {
+  to { -ms-transform: rotate(360deg); }
+}
+@keyframes loading {
+  to { transform: rotate(360deg); }
+}
+
+.search-view{
+  input{
+    width: 250px;
+    height: 45px;
+    border-radius: 6px 6px 0 0;
+  }
+}
+
+.menu-body-wrap {
+  width: 250px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 15, 21, 0.21);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+
+  .menu-body {
+    height: 100%;
+    max-height: 900px;
+    width: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    .list-group {
+      .list-group-item {
+        background: none;
+        border: none;
+        border-radius: 0px;
+        opacity: 0.7;
+        color: rgba(56, 19, 13, 0.94);
+
+        &:hover {
+          background: rgba(45, 15, 21, 0.05);
+          opacity: 1;
+        }
+        &.active {
+          background: rgba(45, 15, 21, 0.05);
+          opacity: 1;
+          position: relative;
+          &:before {
+            position: absolute;
+            display: block;
+            content: "‣";
+            font-size: 30px;
+            right: 60px;
+            position: absolute;
+            top: 0;
+          }
+        }
+      }
+      .breed {
+
+      }
+      .breed-varieties {
+        padding-left: 30px;
+      }
+    }
+
+  }
+}
+

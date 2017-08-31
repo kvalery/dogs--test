@@ -1,20 +1,17 @@
-<div class="container body-page">
+<div class="container view-body">
 
   <div class="navbar">
-    <form class="navbar-form navbar-left search-view" role="form">
 
-      <div class="form-group">
-        <input type="text" placeholder="Search" class="form-control">
-      </div>
+    <a class="logo-home"
+       [routerLink]="['/' ]">
+      <img src="https://dog.ceo/img/dog-api-logo.svg">
+    </a>
 
-      <!--<button type="submit" class="btn btn-success">Sign in</button>-->
-
-    </form>
   </div>
 
   <div class="row body">
 
-    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
       <app-menu> </app-menu>
     </div>
 

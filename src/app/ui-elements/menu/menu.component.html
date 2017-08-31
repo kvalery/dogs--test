@@ -1,0 +1,32 @@
+<div class=" search-view" >
+    <input type="text"
+           (keyup)="getSearchString($event)"
+           placeholder="Search"
+           class="form-control">
+</div>
+
+<div class="menu-body-wrap">
+    <div class="menu-body">
+      <div class=" list-group" *ngIf="sortingBreedList">
+        <div *ngFor="let breed of objectKeys(sortingBreedList)">
+
+          <a class="list-group-item breed"
+             [routerLink]="['/breed', breed ]"
+             [queryParams]="{ sub: breed }"
+             routerLinkActive="active">{{ breed | capitalize }}</a>
+
+            <div *ngIf="breedList[breed].length">
+
+              <a *ngFor="let subBreed of breedList[breed]"
+                 class="list-group-item breed-varieties"
+                 routerLinkActive="active"
+                 [queryParams]="{ sub: subBreed }"
+                 [routerLink]="['/breed', breed ]">{{ ( breed | capitalize ) + ' ( ' + ( subBreed | capitalize ) + ' )' }}</a>
+
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+

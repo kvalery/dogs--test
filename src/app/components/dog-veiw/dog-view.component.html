@@ -1,0 +1,17 @@
+<div>
+  <h1 *ngIf="!subBreedName">{{ breedName | capitalize }}!</h1>
+  <h1 *ngIf="subBreedName">{{ ( subBreedName | capitalize ) +' '+ breedName }}!</h1>
+</div>
+
+<div *ngIf="!dogFotos.length">
+  <div class="loading"></div>
+</div>
+
+<div *ngIf="dogFotos.length">
+
+  <app-slider
+    [pictures] = 'dogFotos'>
+  </app-slider>
+
+</div>
+
